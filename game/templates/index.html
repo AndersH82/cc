@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Webbplats</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <!-- Inkludera navigation bar -->
+    <div id="navbar-container">
+        <!-- Här kan du inkludera innehållet från navbar.html -->
+        <!-- Om du vill inkludera det dynamiskt med JavaScript, kan du använda en fetch-förfrågan -->
+    </div>
+
+    <script src="navbar.js"></script>
+    <script>
+        // Dynamiskt ladda navbar.html innehåll
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
