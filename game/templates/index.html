@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Min Webbplats</title>
-    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 </head>
 <body>
     <!-- Inkludera navigation bar -->
@@ -13,10 +14,10 @@
         <!-- Om du vill inkludera det dynamiskt med JavaScript, kan du använda en fetch-förfrågan -->
     </div>
 
-    <script src="navbar.js"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
     <script>
         // Dynamiskt ladda navbar.html innehåll
-        fetch('navbar.html')
+        fetch('{% static 'navbar.html' %}')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
