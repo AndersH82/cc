@@ -1,8 +1,42 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
 <h1>Welcome to Clue Chasers</h1>
 <p>Embark on an exciting adventure where your wits and detective skills will be put to the test. Dive into a world of mystery, solve challenging puzzles, and uncover hidden secrets. Are you ready to become the ultimate Clue Chaser?</p>
+{% endblock %}
+
+{% block card %}
+<div class="container">
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'images/logo.png' %}" class="card-img-top" alt="Card image">
+        <div class="card-body">
+          <h5>Case 1</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'images/logo.png' %}" class="card-img-top" alt="Card image">
+        <div class="card-body">
+          <h5>Case 2</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'images/logo.png' %}" class="card-img-top" alt="Card image">
+        <div class="card-body">
+          <h5>Case 3</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

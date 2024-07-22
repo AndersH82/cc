@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background-color: rgb(233, 233, 235);
     color: black;
     font-family: 'Comic Sans MS', cursive, sans-serif;
 }
@@ -35,6 +35,14 @@ body {
     box-shadow: 5px 5px 0 black;
 }
 
+.card {
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 black;
+    margin-bottom: 40px;
+    margin-left: 32px;
+
+}
 @media (max-width: 900px) {
     #header-container, #navbar-container, #content-container {
         padding: 10px;
