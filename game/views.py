@@ -5,3 +5,9 @@ def index(request):
 
 def login_view(request):
     return render(request, 'login.html')
+
+def interrogation_view(request):
+    return render(request, 'interrogation.html')
+
+def witness_suspects(request):
+    return render(request, 'witness_suspects.html')

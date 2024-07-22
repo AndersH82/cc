@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Base Template{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+</head>
+<body>
+    <!-- Include header -->
+    <div id="header-container">
+        {% include 'header.html' %}
+    </div>
+
+    <!-- Include navigation bar -->
+    <div id="navbar-container">
+        {% include 'navbar.html' %}
+    </div>
+
+    <!-- Container box for loading content -->
+    <div id="content-container" class="container-fluid">
+        {% block content %}
+        <!-- Content from other pages will be loaded here -->
+        {% endblock %}
+    </div>
+
+    <!-- Include footer -->
+    <div id="footer-container">
+        {% include 'footer.html' %}
+    </div>
+
+    <script src="{% static 'js/navbar.js' %}"></script>
+    <script>
+        // Add event listeners to buttons in the navbar
+        document.querySelectorAll('.nav-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const page = this.getAttribute('data-page');
+                loadContent(page);
+            });
+        });
+
+        // Function to load content into the container
+        function loadContent(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('content-container').innerHTML = data;
+                });
+        }
+    </script>
+</body>
+</html>

@@ -1,27 +1,8 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Min Webbplats</title>
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-</head>
-<body>
-    <!-- Inkludera navigation bar -->
-    <div id="navbar-container">
-        <!-- Här kan du inkludera innehållet från navbar.html -->
-        <!-- Om du vill inkludera det dynamiskt med JavaScript, kan du använda en fetch-förfrågan -->
-    </div>
+{% extends "base.html" %}
 
-    <script src="{% static 'js/navbar.js' %}"></script>
-    <script>
-        // Dynamiskt ladda navbar.html innehåll
-        fetch('{% static 'navbar.html' %}')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-container').innerHTML = data;
-            });
-    </script>
-</body>
-</html>
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome to Clue Chasers</h1>
+<p>Embark on an exciting adventure where your wits and detective skills will be put to the test. Dive into a world of mystery, solve challenging puzzles, and uncover hidden secrets. Are you ready to become the ultimate Clue Chaser?</p>
+{% endblock %}
